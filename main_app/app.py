@@ -1,4 +1,4 @@
-from sub_programs import app
+from sub_programs import app, db
 from flask_sqlalchemy import SQLAlchemy
 import os
 
