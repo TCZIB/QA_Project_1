@@ -1,0 +1,66 @@
+<html>
+
+    <head>
+        <title> Not Recognised </title> 
+    </head>
+
+{% extends "layout.html" %}
+
+{% block page_contents %}
+
+<table>
+    <tr>
+        <th> </th>
+    </tr>
+</table>
+
+<table>
+     
+    <tr>
+        <th class="small"> Title </th>
+        <th class="small"> Age Rating </th>
+        <th class="large"> Movie Description </th>
+        <th class="small"> Movie Runtime </th>
+        <th class="small"> Number of reviews </th>
+    </tr>
+    <tr>
+        <td> {{ item.movie_title }} </td>
+        <td> {{ item.movie_age }} </td>
+        <td> {{ item.movie_description }} </td>
+        <td> {{ item.movie_runtime }} </td>
+        <td> {{ number_of_reviews }} </td>
+    </tr>
+</table>
+
+</br>
+
+<table>
+    <tr>    
+        <th> User </th>
+        <th> Review </th>
+    </tr>
+
+    {% if reviews != 0 %}
+
+        {% for review in reviews %}
+
+        <tr>
+            <td> {{ review.review_author }} </td>
+            <td> {{ review.review_contents }} </td>
+        </tr>
+
+        {% endfor %}
+
+    {% else %}
+
+    </table>
+
+    <div class="centre">
+        <error_message> No reviews found, be the first! </error_message>
+    </div>
+
+    {% endif %}
+
+{% endblock page_contents %}
+
+</html>

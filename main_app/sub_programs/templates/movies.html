@@ -2,30 +2,38 @@
 
     <head>
         <title> Movies </title> 
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
     </head>
 
 {% extends "layout.html" %}
 
 {% block page_contents %}
 
+<div>
+    <p> {{ message }} </p>
+</div>
+
 <table>
+     
     <tr>
-        <th> Title </th>
-        <th> Age Rating </th>
-        <th> Movie Description </th>
-        <th> Movie Runtime </th>
-        <th> Reviews </th>
+        <th class="small"> Title </th>
+        <th class="small"> Age Rating </th>
+        <th class="large"> Movie Description </th>
+        <th class="small"> Movie Runtime </th>
+        <th class="small"> Reviews </th>
     </tr>
+
     {% for item in items %}
+
     <tr>
         <td> {{ item.movie_title }} </td>
         <td> {{ item.movie_age }} </td>
         <td> {{ item.movie_description }} </td>
         <td> {{ item.movie_runtime }} </td>
-        <td> {{ url_for("movie_reviews(item.movie_title)") }} </td>
+        <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> Reviews for {{ item.movie_title }} </a> </td>
     </tr>
+
     {% endfor %}
+
 </table>
 
 {% endblock page_contents %}

@@ -4,10 +4,43 @@
         table, th, td, tr {
             border: 1px solid rgb(185, 185, 185);
             border-collapse: collapse;
-            width: 50%;
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            table-layout: fixed;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        th.small {
+            width: 10%;
+        }
+
+        th.large {
+            width: 60%
+        }
+        td.NavBar{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: auto;
         }
+        .error_message {
+            text-align: center;
+            margin: auto;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: auto;
+            font-size: 72px;
+        }
+        menu {
+            text-align: center;
+            margin: auto;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: auto;          
+        }
+        .centre{
+            text-align: center;
+        }
+
     </style>
 
     <body>
@@ -15,8 +48,8 @@
             <menu> ZMR </menu>
             <table>
                 <tr>
-                    <td> <a href="{{ url_for('home_page') }}"> Home </a> </td>
-                    <td> <a href="{{ url_for('view_movies') }}"> View Movies </a> </td>
+                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"> Home </a> </td>
+                    <td class="NavBar">  <a href="{{ url_for('view_movies') }}"> View Movies </a> </td>
                 </tr>
             </table>
         </div>
