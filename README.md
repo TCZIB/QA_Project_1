@@ -46,4 +46,4 @@ The basic tree structure is as follows:
 
 There will also need to be a design for the database, using draw.io i have generated an ERD for this. Please see below:
 
-![ERD_Diagram](https://imgur.com/a/rl0FRDX "ERD")
+![ERD_Diagram](https://i.imgur.com/Ek9tza7.jpg "ERD")
