@@ -1,3 +1,4 @@
+from sub_programs.forms import Movie_Review_Form
 from sub_programs import models
 from sub_programs import app, db
 from flask import render_template, request, url_for
@@ -15,10 +16,10 @@ def view_movies():
 
 @app.route("/movies/reviews/<movie_title>/<movie_id>", methods=['GET', 'POST'])
 def movie_reviews_page(movie_title, movie_id):
-    
-    selected_movie = Movies.query.get(int(movie_id))
-    number_of_reviews = 5
 
+    form = Movie_Review_Form()
+
+    selected_movie = Movies.query.get(movie_id)
     try:
         selected_movie.movie_title
     except:
@@ -30,7 +31,7 @@ def movie_reviews_page(movie_title, movie_id):
     except:
         reviews = 0
 
-    return render_template("review_page.html", item=selected_movie, number_of_reviews=number_of_reviews, reviews=reviews)
+    return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form)
 
 @app.route("/not_recognised")
 def not_recognised():

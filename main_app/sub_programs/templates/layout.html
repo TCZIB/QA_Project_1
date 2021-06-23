@@ -2,9 +2,11 @@
 
     <style>
         table, th, td, tr {
-            border: 1px solid rgb(185, 185, 185);
-            border-collapse: collapse;
-            width: 80%;
+            border-collapse:separate;
+            border:solid black 1px;
+            border-radius:3px;
+            -moz-border-radius:3px;
+            width: 95%;
             text-align: center;
             margin: auto;
             table-layout: fixed;
@@ -15,12 +17,13 @@
         }
 
         th.large {
-            width: 60%
+            width: 50%
         }
         td.NavBar{
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: auto;
+            font-size: 32px;
         }
         .error_message {
             text-align: center;
@@ -28,9 +31,9 @@
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin: auto;
-            font-size: 72px;
+            font-size: 50px;
         }
-        menu {
+        .menu {
             text-align: center;
             margin: auto;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,12 +43,15 @@
         .centre{
             text-align: center;
         }
-
+        
     </style>
 
     <body>
         <div>
-            <menu> ZMR </menu>
+            <div class="centre">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="ZIB MOVIE REVIEWS" width="50%" height="auto">
+            </div>
+                <br>
             <table>
                 <tr>
                     <td class="NavBar"> <a href="{{ url_for('home_page') }}"> Home </a> </td>

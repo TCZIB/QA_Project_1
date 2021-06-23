@@ -1,7 +1,7 @@
 <html>
 
     <head>
-        <title> Not Recognised </title> 
+        <title> Movie Reviews </title> 
     </head>
 
 {% extends "layout.html" %}
@@ -9,14 +9,9 @@
 {% block page_contents %}
 
 <table>
-    <tr>
-        <th> </th>
-    </tr>
-</table>
-
-<table>
      
     <tr>
+        <th class="small"> Cover Photo</th>
         <th class="small"> Title </th>
         <th class="small"> Age Rating </th>
         <th class="large"> Movie Description </th>
@@ -24,23 +19,39 @@
         <th class="small"> Number of reviews </th>
     </tr>
     <tr>
+        <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
         <td> {{ item.movie_title }} </td>
         <td> {{ item.movie_age }} </td>
         <td> {{ item.movie_description }} </td>
         <td> {{ item.movie_runtime }} </td>
-        <td> {{ number_of_reviews }} </td>
+        <td> {{ MovieReviews.query.filter_by(movie_id=item.id).all()|length }} </td>
     </tr>
 </table>
 
 </br>
-
 <table>
-    <tr>    
-        <th> User </th>
-        <th> Review </th>
+    <tr>
+        <th style="width: 10"> User </th>
+        <th style="width: 80"> Review </th>
+        <th style="width: 10"> Submit </th>
     </tr>
+    <form method = 'post' action = ''>
+        {{ form.hidden_tag() }}
+    <tr>
+        <td> {{ form.username }} </td>
+        <td class="nosize"> {{ form.review(cols=125, rows=3)}}</td>
+        <td> {{form.submit }} </td>
+    </tr>
+    </form>
+</table>
 
-    {% if reviews != 0 %}
+    {% if MovieReviews.query.filter_by(movie_id=item.id).all()|length != 0 %}
+
+    <table>
+        <tr>    
+            <th style="width: 15"> User </th>
+            <th style="width: 85"> Review </th>
+        </tr>
 
         {% for review in reviews %}
 
@@ -55,8 +66,8 @@
 
     </table>
 
-    <div class="centre">
-        <error_message> No reviews found, be the first! </error_message>
+    <div class="centre error_message">
+        <p> No reviews found, be the first! </p>
     </div>
 
     {% endif %}

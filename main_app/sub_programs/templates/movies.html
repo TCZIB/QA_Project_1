@@ -15,6 +15,7 @@
 <table>
      
     <tr>
+        <th class="small"> Cover Photo</th>
         <th class="small"> Title </th>
         <th class="small"> Age Rating </th>
         <th class="large"> Movie Description </th>
@@ -25,10 +26,11 @@
     {% for item in items %}
 
     <tr>
+        <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
         <td> {{ item.movie_title }} </td>
         <td> {{ item.movie_age }} </td>
         <td> {{ item.movie_description }} </td>
-        <td> {{ item.movie_runtime }} </td>
+        <td> {{ item.movie_runtime }} Mins </td>
         <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> Reviews for {{ item.movie_title }} </a> </td>
     </tr>
 

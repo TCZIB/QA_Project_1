@@ -7,7 +7,7 @@ class Movies(db.Model):
     movie_age = db.Column(db.String(30), nullable=False)
     movie_description = db.Column(db.String(500), nullable=False)
     movie_runtime = db.Column(db.Integer(), nullable=False)
-    movie_cover_art = db.Column(db.String(100))
+    movie_cover_art = db.Column(db.String(500))
 
     reviews = db.relationship('MovieReviews', backref="movie")
 
