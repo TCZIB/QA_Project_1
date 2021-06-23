@@ -4,12 +4,14 @@
 ## Table of contents:
 - What this project is
 - Scope of the project
+    - MVP
+    - Personal goals
 - Design specification
     - Outline
     - Tree structure
     - Database ERD
 - Risk assesment
-- User base
+- Trello Board
 
 ## What this project is
 This project will be a way for you to upload reviews about your favorite movies!
@@ -19,12 +21,23 @@ liked and the most liked reviews will appear closer to the top of the list. It i
 to the site owner to update the movie titles but , again, anyone can submit a review!
 
 ## Scope of the projects
+### MVP
 There are a few basic requirements this project must hit, they are as followed:
+- A Trello board
 - At least two databases, in this case two with a relationship
 - A HTML front end, a base layout will be used and a navigation bar will be used
 - WTForms to allow user input
 - Self testing python to be run during each build
 - Archiving of tests to allow backtracing
+- CRUD Functionality
+- Usage of VCS (GIT)
+
+### Personal Goals
+I would like to tailor my own goals to the MVP so that I am not doing and unecessary work, a few of my own goals are as follows:
+- Working list of movies, preferably with picture
+- Working review system with multiple reviews for a couple of movies
+- Rigidity in my code, I want my code to be top notch and ensure it is to standard practice
+
 
 ## Design specification
 
@@ -75,3 +88,10 @@ As with any web application there is always some threat to the application and/o
 |Hateful speech may be posted on your website|3|2|Someone may write harmful or abuse content on your website to purposley cause harm to other users|Site may get negative reviews or decreased traffic|The hateful speech will need to be taken down and the user be given limited funcitonality or banned|Validate the information before it is posted to the site, this might be a quick check written in code or migth be a human validation step|1|1|
 |Connection to the database is lost|1|3|For whatever reason the connection to the database might be lost|The service will stop working functionally but the website will still be live|A new connection needs to be re-established or a backup of the database needs to be made|Ensure there is a fallback option, also ensure a repulatable cloud service is used. Ensure the used service allows for expansion |1|1|
 |Incorrect data may be posted to the website|2|1|A spelling mistake or incorrect piece of information might make it onto the website|Although it wouldnt stop the website functioning it may decrease user satisfacton and again the site may get negative reviews or decreased traffic|Ensure the information is appended quickly and that it is from a repultable source|Ensure all information being posted to the website is factually correct and ensure the original source is reputable|1|1|
+
+## Trello board
+I will be using Trello to track my project, I will not be posting screenshots but rather providing a link.
+
+https://trello.com/b/FogfXGWJ/zmr
+
+I will be using trello to ensure there are a clear list of goals, I can track when I have met these goals and how confident i will be in meeting them for the set deadline.
