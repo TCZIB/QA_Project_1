@@ -27,3 +27,9 @@ class ReviewLikes(db.Model):
 
     like_bool = db.Column(db.Boolean())
     like_author = db.Column(db.String(30), nullable=False)
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    username = db.Column(db.String(30), nullable=False)
+    password = db.Column(db.String(30), nullable=False)

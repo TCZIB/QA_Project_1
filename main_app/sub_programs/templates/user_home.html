@@ -1,4 +1,3 @@
-<html>
 
     <style>
         table, th, td, tr {
@@ -46,6 +45,10 @@
         
     </style>
 
+    <head>
+        <title> Home </title> 
+    </head>
+
     <body>
         <div>
             <div class="centre">
@@ -54,15 +57,36 @@
                 <br>
             <table>
                 <tr>
-                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"> Home </a> </td>
-                    <td class="NavBar">  <a href="{{ url_for('view_movies') }}"> View Movies </a> </td>
-                    <td class="NavBar"> <a href="{{ url_for('login_page') }}"> Login </a> </td>
+                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"> Logout {{ user }} </a> </td>
                 </tr>
             </table>
         </div>
-        <br>
-        {% block page_contents %}
-        {% endblock page_contents %}
-        <br>
+        <div>
+        <table>
+     
+            <tr>
+                <th class="small"> Cover Photo</th>
+                <th class="small"> Title </th>
+                <th class="small"> Age Rating </th>
+                <th class="large"> Movie Description </th>
+                <th class="small"> Movie Runtime </th>
+                <th class="small"> Delete </th>
+            </tr>
+        
+            {% for item in items %}
+        
+            <tr>
+                <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
+                <td> {{ item.movie_title }} </td>
+                <td> {{ item.movie_age }} </td>
+                <td> {{ item.movie_description }} </td>
+                <td> {{ item.movie_runtime }} Mins </td>
+                <td> <a href={{ url_for("delete_movie" ,movie_id=item.id ,user=user) }}> Delete {{ item.movie_title }} </a> </td>
+            </tr>
+        
+            {% endfor %}
+        
+        </table>
+        </div>
+        
     </body>
-</html>
