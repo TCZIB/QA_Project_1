@@ -1,49 +1,6 @@
 
-    <style>
-        table, th, td, tr {
-            border-collapse:separate;
-            border:solid black 1px;
-            border-radius:3px;
-            -moz-border-radius:3px;
-            width: 95%;
-            text-align: center;
-            margin: auto;
-            table-layout: fixed;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        th.small {
-            width: 10%;
-        }
 
-        th.large {
-            width: 50%
-        }
-        td.NavBar{
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: auto;
-            font-size: 32px;
-        }
-        .error_message {
-            text-align: center;
-            margin: auto;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: auto;
-            font-size: 50px;
-        }
-        .menu {
-            text-align: center;
-            margin: auto;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: auto;          
-        }
-        .centre{
-            text-align: center;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
     <head>
         <title> Welcome {{ user }} </title> 
@@ -57,7 +14,7 @@
                 <br>
             <table>
                 <tr>
-                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"> Logout {{ user }} </a> </td>
+                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"> <button> Logout {{ user }} </button> </a> </td>
                 </tr>
             </table>
         </div>
@@ -87,12 +44,37 @@
                 <td> {{ item.movie_age }} </td>
                 <td> {{ item.movie_description }} </td>
                 <td> {{ item.movie_runtime }} Mins </td>
-                <td> <a href={{ url_for("delete_movie" ,movie_id=item.id ,user=user) }}> Delete {{ item.movie_title }} </a> </td>
+                <td> <a href={{ url_for("modify_movie" ,movie_id=item.id ,user=user) }}> <button style="width: 150;"> Modify {{ item.movie_title }} </button>  </a> </td>
             </tr>
         
             {% endfor %}
         
         </table>
+        <div>
+            <notification class="error_message" test> Add Movies </notification>
+        </div>
+        <br>
+        <form method = 'post' action = ''>
+        <table>
+            <tr>
+                <th class="small"> Cover Photo</th>
+                <th class="small"> Title </th>
+                <th class="small"> Age Rating </th>
+                <th class="large"> Movie Description </th>
+                <th class="small"> Movie Runtime </th>
+                <th class="small"> Add </th>
+            </tr>
+            <tr>
+                <td> {{ form.movie_cover_art }} </td>
+                <td> {{ form.movie_title }} </td>
+                <td> {{ form.movie_age }} </td>
+                <td> {{ form.movie_description(cols=120, rows=3) }} </td>
+                <td> {{ form.movie_runtime }} </td>
+                <td> {{ form.add }} <br> {{ message }} </td>
+            </tr>
+            
+        </table>  
+        </form>
         </div>
         
     </body>

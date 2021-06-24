@@ -20,6 +20,16 @@ class Login_Form(FlaskForm):
     form_password = StringField("Your Password: ", validators=[DataRequired(), Length(min=1, max=30)])
     submit = SubmitField("Login")
 
-class Delete_Confirm(FlaskForm):
-    submit = SubmitField("Confirm")
+class Modify_Confirm(FlaskForm):
+    submit = SubmitField("Delete")
     cancel = SubmitField("Cancel")
+    modify = SubmitField("Update")
+    add = SubmitField("Add")
+    
+    movie_title = StringField("Movie title")
+    movie_age = StringField("Movie title")
+    movie_description = StringField("Movie title", widget=TextArea())
+    movie_runtime = StringField("Movie title")
+    movie_cover_art = StringField("Movie title")
+
+

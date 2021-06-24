@@ -29,7 +29,7 @@
         <td> {{ item.movie_age }} </td>
         <td> {{ item.movie_description }} </td>
         <td> {{ item.movie_runtime }} Mins </td>
-        <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> Reviews for {{ item.movie_title }} </a> </td>
+        <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> <button style="width: 150;"> Reviews for {{ item.movie_title }} </button> </a> </td>
     </tr>
 
     {% endfor %}
