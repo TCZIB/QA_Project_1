@@ -50,11 +50,13 @@
             {% endfor %}
         
         </table>
-        <div>
+        <div class="centre">
             <notification class="error_message" test> Add Movies </notification>
         </div>
         <br>
+        
         <form method = 'post' action = ''>
+            {{ form.hidden_tag() }}
         <table>
             <tr>
                 <th class="small"> Cover Photo</th>
@@ -70,7 +72,7 @@
                 <td> {{ form.movie_age }} </td>
                 <td> {{ form.movie_description(cols=120, rows=3) }} </td>
                 <td> {{ form.movie_runtime }} </td>
-                <td> {{ form.add }} <br> {{ message }} </td>
+                <td> {{ form.add }} <br> {{ message_add_error }} </td>
             </tr>
             
         </table>  
