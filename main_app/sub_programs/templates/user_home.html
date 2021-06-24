@@ -46,7 +46,7 @@
     </style>
 
     <head>
-        <title> Home </title> 
+        <title> Welcome {{ user }} </title> 
     </head>
 
     <body>
@@ -61,6 +61,12 @@
                 </tr>
             </table>
         </div>
+        {% if message != "" %}
+        <div class="error_message">
+            <p> {{ message }} </p>
+        </div>
+        {% endif %}
+        <br>
         <div>
         <table>
      
@@ -70,7 +76,7 @@
                 <th class="small"> Age Rating </th>
                 <th class="large"> Movie Description </th>
                 <th class="small"> Movie Runtime </th>
-                <th class="small"> Delete </th>
+                <th class="small"> Modify </th>
             </tr>
         
             {% for item in items %}

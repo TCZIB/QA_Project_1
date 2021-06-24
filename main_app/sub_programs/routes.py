@@ -56,7 +56,7 @@ def login_page():
             return render_template("login.html", form=form, message=message)
 
         if valid_user != None and valid_user.password == form.form_password.data:
-            return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=form.form_username.data, password=form.form_password.data)
+            return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=form.form_username.data, password=form.form_password.data, message="")
 
         else:
             message = "Incorrect password"
@@ -65,19 +65,37 @@ def login_page():
     else:
         return render_template("login.html", form=form, message=message)
 
-@app.route("/delete/<movie_id>/<user>")
+@app.route("/delete/<movie_id>/<user>", methods=['GET', 'POST'])
 def delete_movie(movie_id, user):
-
-    form = Delete_Confirm()
 
     UserAccount = Users.query.filter_by(username=str(user)).first()
     password = UserAccount.password
 
-    if user == "" or password == "":
-        return render_template("index.html")
-
     item_to_delete = Movies.query.filter_by(id=movie_id).first()
 
-    print(item_to_delete.id)
+    form = Delete_Confirm()
 
-    return render_template("delete.html", form=form, item=item_to_delete, user=user, password=password)
+    if form.validate_on_submit():
+        if form.cancel.data:
+            return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message="")
+        elif form.submit.data:
+            
+            reviews = MovieReviews.query.filter_by(movie_id=movie_id).all()
+            
+            for review in reviews:
+                db.session.delete(review)
+
+            db.session.delete(item_to_delete)
+            db.session.commit()
+            
+            return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message=f"{item_to_delete.movie_title} Deleted")
+
+    else:
+
+        if user == "" or password == "":
+            return render_template("index.html")
+    
+
+        item_to_delete = Movies.query.filter_by(id=movie_id).first()
+        return render_template("delete.html", form=form, item=item_to_delete, user=user, password=password)
+

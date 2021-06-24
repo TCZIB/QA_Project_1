@@ -28,17 +28,7 @@
             <div class="centre">
                 <img src="{{ url_for('static', filename='logo.png') }}" alt="ZIB MOVIE REVIEWS" width="30%" height="auto">
             </div>
-                <br>
-
-            <!--
-
-                <table>
-                    <tr>
-                        <td> <a href={{ url_for("user_home", user=user, password=password) }}> Back </a> </td>
-                    </tr>
-                </table>
-                    <br>         
-            -->         
+                <br>      
     <tr>
         <th class="small"> Cover Photo</th>
         <th class="small"> Title </th>
@@ -54,7 +44,11 @@
         <td> {{ item.movie_age }} </td>
         <td> {{ item.movie_description }} </td>
         <td> {{ item.movie_runtime }} Mins </td>
-        <td>  {{ form.submit }} </td>
+
+        <form method = 'post' action = ''>
+            {{ form.hidden_tag() }}
+        <td>  {{ form.submit }} {{  form.cancel }} </td>
+        </form>
     </tr>
 
 </table>

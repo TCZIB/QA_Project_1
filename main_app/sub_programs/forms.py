@@ -22,3 +22,4 @@ class Login_Form(FlaskForm):
 
 class Delete_Confirm(FlaskForm):
     submit = SubmitField("Confirm")
+    cancel = SubmitField("Cancel")
