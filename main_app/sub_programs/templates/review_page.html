@@ -46,9 +46,13 @@
 
     {% if MovieReviews.query.filter_by(movie_id=item.id).all()|length != 0 %}
 
+    <br>
+
     <div class="centre">
         <notification class="error_message"> {{ message }} </notification>
     </div>
+
+    <br>
 
     <table>
         <tr>    

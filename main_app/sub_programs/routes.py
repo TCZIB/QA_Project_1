@@ -4,6 +4,7 @@ from sub_programs import app, db
 from flask import render_template, request, url_for, redirect
 from sub_programs.models import Movies, MovieReviews, ReviewLikes, Users
 from sub_programs import profanities
+import time
 
 @app.route("/")
 @app.route("/home")
@@ -19,7 +20,6 @@ def view_movies():
 def movie_reviews_page(movie_title, movie_id):
 
     form = Movie_Review_Form()
-
     selected_movie = Movies.query.get(movie_id)
     
     try:
@@ -29,9 +29,10 @@ def movie_reviews_page(movie_title, movie_id):
 
     try:
         reviews = MovieReviews.query.filter_by(movie_id=int(selected_movie.id)).all()
-
     except:
         reviews = 0
+
+    # Again, validating outside of form to make my life easier, it means i dont have to code the same thing twice to display a message to the user
 
     if form.validate_on_submit():
 
@@ -40,18 +41,29 @@ def movie_reviews_page(movie_title, movie_id):
 
         review_content_test = review_content.split()
 
+        has_already_reviwed = MovieReviews.query.filter_by(review_author=review_author).all()
+
+        for review in has_already_reviwed:
+            if review.review_contents == review_content:
+                message = "You've already submitted this review!"
+                return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
+
         for word in review_content_test:
             for bad_word in profanities:
                 if word == bad_word:
-                    message = f"{word} Not allowed!"
+                    message = f"Word {word.upper()} Not allowed!"
                     return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
+
+        if len(review_author) <= 4 or len(review_author) >= 31:
+            message = "Please use a username between 5-30 characters"
+            return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
 
         new_review = MovieReviews(movie_id=selected_movie.id, review_contents=review_content, review_author=review_author)
 
         db.session.add(new_review)
         db.session.commit()
 
-        return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form)
+        return redirect(url_for("movie_reviews_page", movie_title=movie_title, movie_id=selected_movie.id))
 
     return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form)
 
@@ -156,7 +168,7 @@ def modify_movie(movie_id, user):
             # This means that is you wanted to cancel the modification it would try to vaildate but couldnt so would fail
             # Instead it validates on the modift/update button press
 
-            form_movie_title = form.title.data
+            form_movie_title = form.movie_title.data
             form_movie_age = form.movie_age.data
             form_movie_description = form.movie_description.data
             form_movie_runtime = form.movie_runtime.data

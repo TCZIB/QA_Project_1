@@ -3,8 +3,8 @@ from sub_programs import db
 class Movies(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     
-    movie_title = db.Column(db.String(30), nullable=False)
-    movie_age = db.Column(db.String(30), nullable=False)
+    movie_title = db.Column(db.String(100), nullable=False)
+    movie_age = db.Column(db.String(100), nullable=False)
     movie_description = db.Column(db.String(500), nullable=False)
     movie_runtime = db.Column(db.Integer(), nullable=False)
     movie_cover_art = db.Column(db.String(500))
