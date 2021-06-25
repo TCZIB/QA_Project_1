@@ -102,3 +102,8 @@ I will be using trello to ensure there are a clear list of goals, I can track wh
 I will also be tracking user stories throught the project to make sure what I am delviering is suitable for myself and the end user.
 
 ## Changes as project has progressed
+
+I have restructured the project slightly, due to the need for me to add a users I have missed off the Review_Likes table, this is a small part but the main core of the site remains,
+I have managed to achieve all CRUD functionality, create a trello board and complete a risk assesment. The new ERD diagram is as follows:
+
+![ERD_Diagram](https://i.imgur.com/Z7ilG35.jpg "ERD")
