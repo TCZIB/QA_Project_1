@@ -8,13 +8,11 @@
 
 {% block page_contents %}
 
-<div class="centre">
-    <td> Welcome to ZMR, your place to view movies, their info and leave a review!</td>
-</div>
-<br>
-<div class="centre">
-    <td> See below 5 random movies! </td>
-</div>
+<table>
+    <tr>
+        <td> Welcome to ZMR, your place to view movies, their info and leave a review! <br><br> See below 5 random movies! <br> </td>
+    </tr>
+</table>
 <br>
 <div class="centre">
     <table>
@@ -31,12 +29,12 @@
         {% for item in items %}
     
         <tr>
-            <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
+            <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100%"> </td>
             <td> {{ item.movie_title }} </td>
             <td> {{ item.movie_age }} </td>
             <td> {{ item.movie_description }} </td>
             <td> {{ item.movie_runtime }} Mins </td>
-            <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> <button style="width: 150;"> Reviews for {{ item.movie_title }} </button> </a> </td>
+            <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> <button style="width: 80%;"> Reviews for {{ item.movie_title }} </button> </a> </td>
         </tr>
     
         {% endfor %}

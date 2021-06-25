@@ -141,7 +141,7 @@ def logged_in(user=0, password=0):
             form_movie_cover_art = form.movie_cover_art.data
 
             if not form_movie_cover_art:
-                message = "Empty movie cover art"
+                message = "Empty movie cover photo"
                 return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message_add_error=message, form=form)
 
             if not form_movie_title:
@@ -211,7 +211,7 @@ def modify_movie(movie_id, user):
             form_movie_cover_art = form.movie_cover_art.data
 
             if not form_movie_cover_art:
-                message = "Empty movie cover art"
+                message = "Empty movie cover photo"
                 return render_template("modify.html", form=form, item=item_to_modify, user=user, password=password, message=message)
 
             if not form_movie_title:
