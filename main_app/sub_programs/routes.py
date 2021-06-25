@@ -1,16 +1,46 @@
+from typing_extensions import final
 from sub_programs.forms import Movie_Review_Form, Login_Form, Modify_Confirm
 from sub_programs import models
 from sub_programs import app, db
 from flask import render_template, request, url_for, redirect
-from sub_programs.models import Movies, MovieReviews, ReviewLikes, Users
-from sub_programs import profanities
-import time
+from sub_programs.models import Movies, MovieReviews, Users
+from sub_programs import profanities, accepted_ages
+import random
 
 @app.route("/")
 @app.route("/home")
 
 def home_page():
-    return render_template('index.html')
+
+    all_movies = Movies.query.all()
+    ordered_list = []
+
+    for movie in all_movies:
+        ordered_list.append(movie.id)
+
+    Random_Movies = True
+    attempt = 0
+    items = []
+    final_list = []
+
+    while Random_Movies:
+        
+        attempt += 1
+        random_movie = random.choice(ordered_list)
+        
+        if random_movie not in final_list:
+            
+            final_list.append(random_movie)
+            items.append(Movies.query.get(int(random_movie)))
+        
+        if len(final_list) == 5:
+            Random_Movies = False
+
+        if attempt == 100:
+            Random_Movies = False
+
+
+    return render_template('index.html', items=items)
 
 @app.route("/movies")
 def view_movies():
@@ -126,15 +156,19 @@ def logged_in(user, password):
 
             if not form_movie_runtime:
                 message = "Empty movie runtime"
-                return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message=message, form=form)
+                return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message_add_error=message, form=form)
             
             try:
                 int(form.movie_runtime.data)
             except:
                 message = "Runtime must be interger!"
-                return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message=message, form=form)
+                return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message_add_error=message, form=form)
 
             new_item = Movies(movie_title=form_movie_title, movie_age=form_movie_age, movie_description=form_movie_description, movie_runtime= form_movie_runtime, movie_cover_art=form_movie_cover_art)
+
+            if form_movie_age not in accepted_ages:
+                message = "Incorrect age ranges"
+                return render_template("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message_add_error=message, form=form)
 
             db.session.add(new_item)
             db.session.commit()
@@ -196,9 +230,14 @@ def modify_movie(movie_id, user):
             
             try:
                 int(form.movie_runtime.data)
+            
             except:
                 message = "Runtime must be interger!"
-                return redirect("user_home.html",items = Movies.query.order_by(Movies.movie_title), user=user, password=password, message=message, form=form)
+                return render_template("modify.html", form=form, item=item_to_modify, user=user, password=password, message=message)
+
+            if form_movie_age not in accepted_ages:
+                message = "Incorrect age ranges"
+                return render_template("modify.html", form=form, item=item_to_modify, user=user, password=password, message=message)
 
             item_to_modify.movie_cover_art = form.movie_cover_art.data
             item_to_modify.movie_title = form.movie_title.data

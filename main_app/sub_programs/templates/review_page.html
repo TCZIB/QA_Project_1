@@ -22,7 +22,7 @@
         <td> {{ item.movie_title }} </td>
         <td> {{ item.movie_age }} </td>
         <td> {{ item.movie_description }} </td>
-        <td> {{ item.movie_runtime }} </td>
+        <td> {{ item.movie_runtime }} Mins </td>
         <td> {{ MovieReviews.query.filter_by(movie_id=item.id).all()|length }} </td>
     </tr>
 </table>

@@ -24,37 +24,10 @@
         </div>
         {% endif %}
         <br>
-        <div>
-        <table>
-     
-            <tr>
-                <th class="small"> Cover Photo</th>
-                <th class="small"> Title </th>
-                <th class="small"> Age Rating </th>
-                <th class="large"> Movie Description </th>
-                <th class="small"> Movie Runtime </th>
-                <th class="small"> Modify </th>
-            </tr>
-        
-            {% for item in items %}
-        
-            <tr>
-                <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
-                <td> {{ item.movie_title }} </td>
-                <td> {{ item.movie_age }} </td>
-                <td> {{ item.movie_description }} </td>
-                <td> {{ item.movie_runtime }} Mins </td>
-                <td> <a href={{ url_for("modify_movie" ,movie_id=item.id ,user=user) }}> <button style="width: 150;"> Modify {{ item.movie_title }} </button>  </a> </td>
-            </tr>
-        
-            {% endfor %}
-        
-        </table>
         <div class="centre">
             <notification class="error_message" test> Add Movies </notification>
         </div>
         <br>
-        
         <form method = 'post' action = ''>
             {{ form.hidden_tag() }}
         <table>
@@ -77,6 +50,48 @@
             
         </table>  
         </form>
+        <br>
+        <div class="centre">
+            <notification class="error_message" test> Current Movies </notification>
+        </div>
+        <br>
+        <div>
+        <table>
+     
+            <tr>
+                <th class="small"> Cover Photo</th>
+                <th class="small"> Title </th>
+                <th class="small"> Age Rating </th>
+                <th class="large"> Movie Description </th>
+                <th class="small"> Movie Runtime </th>
+                <th class="small"> Modify </th>
+            </tr>
+            <tr>
+                <td> Must be image link address </td>
+                <td> Title of the movie </td>
+                <td> International age rating </td>
+                <td> A breif description of the movie, either its production or a breif explination of the story </td>
+                <td> Movie runtime in minutes </td> 
+                <td> Click to view options </td>
+            </tr>
+        
+            {% for item in items %}
+        
+            <tr>
+                <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
+                <td> {{ item.movie_title }} </td>
+                <td> {{ item.movie_age }} </td>
+                <td> {{ item.movie_description }} </td>
+                <td> {{ item.movie_runtime }} Mins </td>
+                <td> <a href={{ url_for("modify_movie" ,movie_id=item.id ,user=user) }}> <button style="width: 150;"> Modify {{ item.movie_title }} </button>  </a> </td>
+            </tr>
+        
+            {% endfor %}
+        
+        </table>
+
+        <br>
+
         </div>
         
     </body>

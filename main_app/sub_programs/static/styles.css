@@ -48,3 +48,10 @@ button{
     border-radius:3px;
     -moz-border-radius:3px;
 }
+.general_text {
+    text-align: center;
+    margin: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: auto; 
+}
