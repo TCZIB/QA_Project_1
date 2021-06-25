@@ -14,7 +14,7 @@
 - Trello Board
 - Testing
 - Pipeline overview
-- Changes as project has progressed
+- Changes as the project has progressed
 
 
 ## What this project is
@@ -28,7 +28,7 @@ to the site owner to update the movie titles but , again, anyone can submit a re
 ### MVP
 There are a few basic requirements this project must hit, they are as followed:
 - A Trello board
-- At least two databases, in this case two with a relationship
+- At least two databases, in this case with a relationship
 - A HTML front end, a base layout will be used and a navigation bar will be used
 - WTForms to allow user input
 - Self testing python to be run during each build
@@ -119,7 +119,7 @@ Please see below a diagram as to my pipeline:
 
 ![Pipeline](https://i.imgur.com/b9kpqjL.png "Pipeline")
 
-## Changes as project has progressed
+## Changes as the project has progressed
 
 I have restructured the project slightly, due to the need for me to add a users I have missed off the Review_Likes table, this is a small part but the main core of the site remains,
 I have managed to achieve all CRUD functionality, create a trello board and complete a risk assesment. The new ERD diagram is as follows:
