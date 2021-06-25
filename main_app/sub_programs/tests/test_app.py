@@ -22,9 +22,8 @@ class TestBase(TestCase):
 
     def setUp(self):
 
-        parentDirectory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-        movie_csv = parentDirectory + "/main_app/Filler_Info/movies.csv"
-        review_csv = parentDirectory + "/main_app/Filler_Info/reviews.csv"
+        movie_csv = os.getenv("movie_csv")
+        review_csv = os.getenv("review_csv")
 
         db.drop_all()
         db.create_all()
