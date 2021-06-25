@@ -22,28 +22,16 @@ class TestBase(TestCase):
 
     def setUp(self):
 
-        movie_csv_dir = os.getenv("movie_csv")
-        review_csv_dir = os.getenv("review_csv")
-
         db.drop_all()
         db.create_all()
 
-        movie_csv = csv.reader(open(movie_csv_dir, "r"), delimiter="`")
-        review_csv = csv.reader(open(review_csv_dir, "r"), delimiter="`")
+        new_movie_item = Movies(movie_title="Shrek", movie_age="U", movie_description="Something about shrek", movie_runtime="105", movie_cover_art="Some cover art")
+        db.session.add(new_movie_item)
+        db.session.commit()
 
-
-        next(movie_csv)
-        next(review_csv)
-
-        for row in movie_csv:
-            new_movie_item = Movies(movie_title=row[0], movie_age=row[1], movie_description=row[2], movie_runtime=int(row[3]), movie_cover_art=row[4])
-            db.session.add(new_movie_item)
-            db.session.commit()
-
-        for row in review_csv:
-            new_review_item = MovieReviews(movie_id=row[0], review_contents=row[1], review_author=row[2])
-            db.session.add(new_review_item)
-            db.session.commit()
+        new_review_item = MovieReviews(movie_id=row1, review_contents="somthing", review_author="i am a test user")
+        db.session.add(new_review_item)
+        db.session.commit()
 
         moderator = Users(username="moderator", password="moderator")
         zib = Users(username="zib", password="zib")
