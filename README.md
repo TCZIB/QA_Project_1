@@ -12,6 +12,10 @@
     - Database ERD
 - Risk assesment
 - Trello Board
+- Testing
+- Pipeline overview
+-
+
 
 ## What this project is
 This project will be a way for you to upload reviews about your favorite movies!
@@ -58,7 +62,7 @@ The basic tree structure is as follows:
         - *.html
     - testing
         - __init__.py
-        - *_test.py
+        - test_*.py
     - sub_programs
         - __init__.py
         - models.py
@@ -95,3 +99,6 @@ I will be using Trello to track my project, I will not be posting screenshots bu
 https://trello.com/b/FogfXGWJ/zmr
 
 I will be using trello to ensure there are a clear list of goals, I can track when I have met these goals and how confident i will be in meeting them for the set deadline.
+I will also be tracking user stories throught the project to make sure what I am delviering is suitable for myself and the end user.
+
+## Changes as project has progressed
