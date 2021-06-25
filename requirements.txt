@@ -9,3 +9,4 @@ pytest-cov
 flask-testing
 pymysql
 gunicorn
+numpy

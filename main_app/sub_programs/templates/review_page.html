@@ -39,13 +39,15 @@
     <tr>
         <td> {{ form.username }} </td>
         <td class="nosize"> {{ form.review(cols=125, rows=3)}}</td>
-        <td> {{form.submit }} </td>
+        <td> {{form.submit }} <br> {{ error_message }} </td>
     </tr>
     </form>
 </table>
+<br>
 
     {% if MovieReviews.query.filter_by(movie_id=item.id).all()|length != 0 %}
 
+<<<<<<< Updated upstream
     <br>
 
     <div class="centre">
@@ -54,6 +56,8 @@
 
     <br>
 
+=======
+>>>>>>> Stashed changes
     <table>
         <tr>    
             <th style="width: 15"> User </th>

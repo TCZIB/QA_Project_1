@@ -19,7 +19,6 @@ class MovieReviews(db.Model):
     review_contents = db.Column(db.String(500), nullable=False)
     review_author = db.Column(db.String(30), nullable=False)
 
-
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 

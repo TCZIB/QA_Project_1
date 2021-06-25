@@ -10,10 +10,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-parentDirectory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-user_path = parentDirectory + "/main_app/sub_programs/static/blacklisted_words.txt"
+user = os.popen('whoami').read()
 
-words = open(user_path, 'r')
+
+words = open(("/home/"+str(user[:-1])+"/QA_Project_1/main_app/sub_programs/static/blacklisted_words.txt"), 'r')
 lines = words.readlines()
 
 profanities = []
