@@ -128,10 +128,10 @@ def login_page():
         return render_template("login.html", form=form, message=message)
 
 @app.route("/logged_in/<user>/<password>", methods=['GET', 'POST'])
-def logged_in(user, password):
+def logged_in(user=0, password=0):
 
     form = Modify_Confirm()
-
+    
     if form.validate_on_submit():
     
             form_movie_title = form.movie_title.data
