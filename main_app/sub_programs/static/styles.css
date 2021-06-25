@@ -9,7 +9,6 @@ table, th, td, tr {
     table-layout: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size-adjust: 1;
-
 }
 th.small {
     width: 10%;
@@ -56,4 +55,8 @@ text {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin: auto; 
+}
+
+body {
+    background-color: antiquewhite;
 }
