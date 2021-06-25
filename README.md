@@ -2,7 +2,7 @@
 # QA_Project_1 ZMR
 
 ## Table of contents:
-- What this project is
+- What this project is (#What this project is)
 - Scope of the project
     - MVP
     - Personal goals
@@ -104,13 +104,20 @@ I will also be tracking user stories throught the project to make sure what I am
 ## Testing
 
 I have used Flask' built in testing module, this allows simple POST requests to the website and forms, it then reads text from the GET that it receives back, i have acheived a 75% test
-coverage in my program which is good so far. I could increase this however to save time I have not. The reason for this is because in the routes.py there are two very similar chunks or check code by design they have had to be duplicated and changed instead of made into a function however they both perfom the same checks. I have checked on iteration and it is 100% covered, this gives me a good indication that the second duplicate block is perfoming its role great aswell.
+coverage in my program which is good so far. I could increase this however to save time I have not. The reason for this is because in the routes.py there are two very similar chunks of check code, by design they have had to be duplicated and changed instead of made into a function however they both perfom the same checks. I have checked on iteration and it is 100% covered, this gives me a good indication that the second duplicate block is perfoming its role great aswell.
 
 The testing generates a coverage report automatically when a new commit is added to the main branch. This is done through a jenkins item and an automatic webhook. This means everytime something is committed to main it is automatically tests, built then deployed. The test results are artifacted allowing me to track changes, below is a screenshot of my jenkins interface. The reason builder has failed is because it is using gunicorn and running the task endlessly, this can be improved but works for now.
 
 ![Jenkins](https://i.imgur.com/tfqJ9wF.png "Jenkins")
 
 ![Coverage](https://i.imgur.com/ULW7J4p.png "Coverage")
+
+
+## Pipeline Overview
+
+Please see below a diagram as to my pipeline:
+
+![Pipeline](https://i.imgur.com/b9kpqjL.png "Pipeline")
 
 ## Changes as project has progressed
 
