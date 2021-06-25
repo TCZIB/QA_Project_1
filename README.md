@@ -75,7 +75,7 @@ The basic tree structure is as follows:
 
 ### Database ERD
 
-There will also need to be a design for the database, using draw.io i have generated an ERD for this. Please see below:
+There will also need to be a design for the database, using draw.io Ihave generated an ERD for this. Please see below:
 
 ![ERD_Diagram](https://i.imgur.com/Ek9tza7.jpg "ERD")
 
@@ -100,12 +100,12 @@ I will be using Trello to track my project, I will not be posting screenshots bu
 
 https://trello.com/b/FogfXGWJ/zmr
 
-I will be using trello to ensure there are a clear list of goals, I can track when I have met these goals and how confident i will be in meeting them for the set deadline.
+I will be using trello to ensure there are a clear list of goals, I can track when I have met these goals and how confident Iwill be in meeting them for the set deadline.
 I will also be tracking user stories throught the project to make sure what I am delviering is suitable for myself and the end user.
 
 ## Testing
 
-I have used Flask' built in testing module, this allows simple POST requests to the website and forms, it then reads text from the GET that it receives back, i have acheived a 75% test
+I have used Flask' built in testing module, this allows simple POST requests to the website and forms, it then reads text from the GET that it receives back, Ihave acheived a 75% test
 coverage in my program which is good so far. I could increase this however to save time I have not. The reason for this is because in the routes.py there are two very similar chunks of check code, by design they have had to be duplicated and changed instead of made into a function however they both perfom the same checks. I have checked on iteration and it is 100% covered, this gives me a good indication that the second duplicate block is perfoming its role great aswell.
 
 The testing generates a coverage report automatically when a new commit is added to the main branch. This is done through a jenkins item and an automatic webhook. This means everytime something is committed to main it is automatically tests, built then deployed. The test results are artifacted allowing me to track changes, below is a screenshot of my jenkins interface. The reason builder has failed is because it is using gunicorn and running the task endlessly, this can be improved but works for now.
@@ -128,12 +128,12 @@ I have managed to achieve all CRUD functionality, create a trello board and comp
 
 ![ERD_Diagram](https://i.imgur.com/Z7ilG35.jpg "ERD")
 
-This simplified my job while keeping to the MVP, I found it easier to meet the targets modifying the tables as i had more of an idea of what i could modify
+This simplified my job while keeping to the MVP, I found it easier to meet the targets modifying the tables as Ihad more of an idea of what Icould modify
 
 ## What I would do better
 
-- If i was to complete this task next time I would put more effort into using a trello board. This project was rather small so I found it quite easy to remember what I had done and keep track mentally, as stated however, next time I would like to utilise the trello board more.
-- I would like to use more layouts for the HTML, i have a few repeating sections of code and next time I would like to make more pre-built sections to throw in
+- If Iwas to complete this task next time I would put more effort into using a trello board. This project was rather small so I found it quite easy to remember what I had done and keep track mentally, as stated however, next time I would like to utilise the trello board more.
+- I would like to use more layouts for the HTML, Ihave a few repeating sections of code and next time I would like to make more pre-built sections to throw in
 - I would like to make the website more accessible for mobile devices, it doesnt really scale well. However this isnt really needed as it wasnt in the breif or MVP. It works best on a 1920 * 1080 display
 
 ## Goals met
@@ -147,13 +147,13 @@ I have met the following goals:
     - I have three tables, the ability to add reviews, the ability to add movies, the ability to update movie information and the ability to delete entries
 
 - A HTML front end, a base layout will be used and a navigation bar will be used
-    - I have made a decent looking front end, i have used layouts to make sure im not repeating HTML, I have also used a CSS styles sheet to make the website fluent in design 
+    - I have made a decent looking front end, Ihave used layouts to make sure im not repeating HTML, I have also used a CSS styles sheet to make the website fluent in design 
 
 - WTForms to allow user input
     - I have several forms including Movie_Review_Form, Login_Form and Modify_Confirm. The forms are used in multiple places to reduce repetative code and they work quite well
 
 - Self testing python to be run during each build
-    - Using Flask_Testing i have been able to acheieve a high level of coverage within my program
+    - Using Flask_Testing Ihave been able to acheieve a high level of coverage within my program
 
 - Archiving of tests to allow backtracing
     - I am using jenkins and artefacting to keep track of previous builds
