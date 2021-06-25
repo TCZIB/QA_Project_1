@@ -14,7 +14,14 @@
         <th class="small"> Movie Runtime </th>
         <th class="small"> Modify </th>
     </tr>
-
+    <tr>
+        <td> Must be image link address </td>
+        <td> Title of the movie </td>
+        <td> International age rating </td>
+        <td> A breif description of the movie, either its production or a breif explination of the story </td>
+        <td> Movie runtime in minutes </td> 
+        <td> Choose an option below </td>
+    </tr>
     <tr>
         <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
         <td> {{ item.movie_title }} </td>
@@ -41,14 +48,21 @@
             <th class="small"> Movie Runtime </th>
             <th class="small"> Modify </th>
         </tr>
+        <tr>
+            <td> Must be image link address </td>
+            <td> Title of the movie </td>
+            <td> International age rating </td>
+            <td> A breif description of the movie, either its production or a breif explination of the story </td>
+            <td> Movie runtime in minutes </td> 
+            <td> Click to submit </td>
+        </tr>
+        <tr>
             <td> {{ form.movie_cover_art }} </td>
             <td> {{ form.movie_title }} </td>
             <td> {{ form.movie_age }} </td>
             <td> {{ form.movie_description(cols=120, rows=3) }} </td>
             <td> {{ form.movie_runtime }} </td>
             <td> {{ form.modify }} <br> {{ message }} </td>
-        </form>
-        <tr>
-
         </tr>
+        </form>
     </table>

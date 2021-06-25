@@ -21,4 +21,6 @@ profanities = []
 for line in lines:
     profanities.append(line[:-1])
 
+accepted_ages = ["G","U","PG","PG-13","12","15","R","18","NC-17","R-18"]
+
 from sub_programs import routes

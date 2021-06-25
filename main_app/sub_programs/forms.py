@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField, DateField, SubmitField
 from wtforms.validators import Length, DataRequired, ValidationError
 from wtforms.widgets import TextArea
-from sub_programs.models import Movies, MovieReviews, ReviewLikes, Users
+from sub_programs.models import Movies, MovieReviews, Users
   
 class Movie_Review_Form(FlaskForm):
     username = StringField("Your name: ", validators=[DataRequired(), Length(min=1, max=30)])
