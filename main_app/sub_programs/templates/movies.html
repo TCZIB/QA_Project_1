@@ -1,0 +1,39 @@
+<head>
+        <title> Movies </title> 
+    </head>
+
+{% extends "layout.html" %}
+
+{% block page_contents %}
+
+<div>
+    <p> {{ message }} </p>
+</div>
+
+<table>
+     
+    <tr>
+        <th class="small"> Cover Photo</th>
+        <th class="small"> Title </th>
+        <th class="small"> Age Rating </th>
+        <th class="large"> Movie Description </th>
+        <th class="small"> Movie Runtime </th>
+        <th class="small"> Reviews </th>
+    </tr>
+
+    {% for item in items %}
+
+    <tr>
+        <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
+        <td> {{ item.movie_title }} </td>
+        <td> {{ item.movie_age }} </td>
+        <td> {{ item.movie_description }} </td>
+        <td> {{ item.movie_runtime }} Mins </td>
+        <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> <button style="width: 150;"> Reviews for {{ item.movie_title }} </button> </a> </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock page_contents %}

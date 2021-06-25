@@ -1,0 +1,82 @@
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <head>
+        <title> Welcome {{ user }} </title> 
+    </head>
+
+    <body>
+        <div>
+            <div class="centre">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="ZIB MOVIE REVIEWS" width="30%" height="auto">
+            </div>
+                <br>
+            <table>
+                <tr>
+                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"> <button> Logout {{ user }} </button> </a> </td>
+                </tr>
+            </table>
+        </div>
+        {% if message != "" %}
+        <div class="error_message">
+            <p> {{ message }} </p>
+        </div>
+        {% endif %}
+        <br>
+        <div>
+        <table>
+     
+            <tr>
+                <th class="small"> Cover Photo</th>
+                <th class="small"> Title </th>
+                <th class="small"> Age Rating </th>
+                <th class="large"> Movie Description </th>
+                <th class="small"> Movie Runtime </th>
+                <th class="small"> Modify </th>
+            </tr>
+        
+            {% for item in items %}
+        
+            <tr>
+                <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
+                <td> {{ item.movie_title }} </td>
+                <td> {{ item.movie_age }} </td>
+                <td> {{ item.movie_description }} </td>
+                <td> {{ item.movie_runtime }} Mins </td>
+                <td> <a href={{ url_for("modify_movie" ,movie_id=item.id ,user=user) }}> <button style="width: 150;"> Modify {{ item.movie_title }} </button>  </a> </td>
+            </tr>
+        
+            {% endfor %}
+        
+        </table>
+        <div class="centre">
+            <notification class="error_message" test> Add Movies </notification>
+        </div>
+        <br>
+        
+        <form method = 'post' action = ''>
+            {{ form.hidden_tag() }}
+        <table>
+            <tr>
+                <th class="small"> Cover Photo</th>
+                <th class="small"> Title </th>
+                <th class="small"> Age Rating </th>
+                <th class="large"> Movie Description </th>
+                <th class="small"> Movie Runtime </th>
+                <th class="small"> Add </th>
+            </tr>
+            <tr>
+                <td> {{ form.movie_cover_art }} </td>
+                <td> {{ form.movie_title }} </td>
+                <td> {{ form.movie_age }} </td>
+                <td> {{ form.movie_description(cols=120, rows=3) }} </td>
+                <td> {{ form.movie_runtime }} </td>
+                <td> {{ form.add }} <br> {{ message_add_error }} </td>
+            </tr>
+            
+        </table>  
+        </form>
+        </div>
+        
+    </body>

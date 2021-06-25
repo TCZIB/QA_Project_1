@@ -1,0 +1,50 @@
+table, th, td, tr {
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    width: 95%;
+    text-align: center;
+    margin: auto;
+    table-layout: fixed;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+th.small {
+    width: 10%;
+}
+
+th.large {
+    width: 50%
+}
+td.NavBar{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: auto;
+    font-size: 32px;
+}
+.error_message {
+    text-align: center;
+    margin: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: auto;
+    font-size: 50px;
+}
+.menu {
+    text-align: center;
+    margin: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: auto;          
+}
+.centre{
+    text-align: center;
+}
+button{
+    width: 25%;
+    font-size: 20px;
+    background-color: rgb(204, 204, 204);
+    border:solid black 1px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+}

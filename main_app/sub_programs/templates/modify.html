@@ -1,0 +1,54 @@
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+            <div class="centre">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="ZIB MOVIE REVIEWS" width="30%" height="auto">
+            </div>
+                <br>  
+    <table>   
+    <tr>
+        <th class="small"> Cover Photo</th>
+        <th class="small"> Title </th>
+        <th class="small"> Age Rating </th>
+        <th class="large"> Movie Description </th>
+        <th class="small"> Movie Runtime </th>
+        <th class="small"> Modify </th>
+    </tr>
+
+    <tr>
+        <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100"> </td>
+        <td> {{ item.movie_title }} </td>
+        <td> {{ item.movie_age }} </td>
+        <td> {{ item.movie_description }} </td>
+        <td> {{ item.movie_runtime }} Mins </td>
+
+        <form method = 'post' action = ''>
+            {{ form.hidden_tag() }}
+        <td>  {{ form.submit }} {{  form.cancel }} </td>
+    </tr>
+    </table>
+    <br>
+    <div class="centre">
+        <notification class="error_message"> UPDATE CONTENTS </notification>
+    </div>
+    <br>
+    <table>
+        <tr>
+            <th class="small"> Cover Photo</th>
+            <th class="small"> Title </th>
+            <th class="small"> Age Rating </th>
+            <th class="large"> Movie Description </th>
+            <th class="small"> Movie Runtime </th>
+            <th class="small"> Modify </th>
+        </tr>
+            <td> {{ form.movie_cover_art }} </td>
+            <td> {{ form.movie_title }} </td>
+            <td> {{ form.movie_age }} </td>
+            <td> {{ form.movie_description(cols=120, rows=3) }} </td>
+            <td> {{ form.movie_runtime }} </td>
+            <td> {{ form.modify }} <br> {{ message }} </td>
+        </form>
+        <tr>
+
+        </tr>
+    </table>
