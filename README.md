@@ -2,7 +2,7 @@
 # QA_Project_1 ZMR
 
 ## Table of contents:
-- What this project is (#What this project is)
+- What this project is
 - Scope of the project
     - MVP
     - Personal goals
