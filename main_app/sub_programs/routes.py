@@ -78,7 +78,7 @@ def movie_reviews_page(movie_title, movie_id):
         for review in has_already_reviwed:
             if review.review_contents == review_content:
                 message = "You've already submitted this review!"
-                return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
+                return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, error_message=message)
 
         for word in review_content_test:
             for bad_word in profanities:
