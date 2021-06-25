@@ -10,10 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-user = os.popen('whoami').read()
-
-
-words = open((os.getenv("homePath")), 'r')
+words = open(os.getenv("bad_words"), 'r')
 lines = words.readlines()
 
 profanities = []
