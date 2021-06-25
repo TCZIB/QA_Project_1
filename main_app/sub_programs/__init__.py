@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 user = os.popen('whoami').read()
 
 
-words = open(("/home/"+str(user[:-1])+"/QA_Project_1/main_app/sub_programs/static/blacklisted_words.txt"), 'r')
+words = open((os.getenv("homePath")), 'r')
 lines = words.readlines()
 
 profanities = []
