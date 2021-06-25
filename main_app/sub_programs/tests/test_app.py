@@ -29,7 +29,7 @@ class TestBase(TestCase):
         db.session.add(new_movie_item)
         db.session.commit()
 
-        new_review_item = MovieReviews(movie_id=row1, review_contents="somthing", review_author="i am a test user")
+        new_review_item = MovieReviews(movie_id=1, review_contents="somthing", review_author="i am a test user")
         db.session.add(new_review_item)
         db.session.commit()
 
