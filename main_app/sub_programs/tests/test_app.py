@@ -38,7 +38,7 @@ class TestBase(TestCase):
         db.session.add(new_movie_item)
         db.session.commit()
 
-        new_review_item = MovieReviews(movie_id=1, review_contents="somthing", review_author="i am a test user")
+        new_review_item = MovieReviews(movie_id=1, review_contents="good", review_author="TibialZIB")
         db.session.add(new_review_item)
         db.session.commit()
 
@@ -196,3 +196,4 @@ class TestBase(TestCase):
         )
 
         self.assertIn(b'Runtime must be interger!', response.data)
+
