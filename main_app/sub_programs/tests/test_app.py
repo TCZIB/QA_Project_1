@@ -22,14 +22,14 @@ class TestBase(TestCase):
 
     def setUp(self):
 
-        movie_csv = os.getenv("movie_csv")
-        review_csv = os.getenv("review_csv")
+        movie_csv_dir = os.getenv("movie_csv")
+        review_csv_dir = os.getenv("review_csv")
 
         db.drop_all()
         db.create_all()
 
-        movie_csv = csv.reader(open(movie_csv, "r"), delimiter="`")
-        review_csv = csv.reader(open(review_csv, "r"), delimiter="`")
+        movie_csv = csv.reader(open(movie_csv_dir, "r"), delimiter="`")
+        review_csv = csv.reader(open(review_csv_dir, "r"), delimiter="`")
 
 
         next(movie_csv)
