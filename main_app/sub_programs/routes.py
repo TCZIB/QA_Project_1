@@ -66,6 +66,8 @@ def movie_reviews_page(movie_title, movie_id):
 
     if form.validate_on_submit():
 
+        print(1)
+
         review_content = form.review.data
         review_author = form.username.data
 
@@ -76,17 +78,17 @@ def movie_reviews_page(movie_title, movie_id):
         for review in has_already_reviwed:
             if review.review_contents == review_content:
                 message = "You've already submitted this review!"
-                return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
+                return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, error_message=message)
 
         for word in review_content_test:
             for bad_word in profanities:
                 if word == bad_word:
                     message = f"Word {word.upper()} Not allowed!"
-                    return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
+                    return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, error_message=message)
 
         if len(review_author) <= 4 or len(review_author) >= 31:
             message = "Please use a username between 5-30 characters"
-            return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, message=message)
+            return render_template("review_page.html", item=selected_movie, reviews=reviews, MovieReviews=MovieReviews, form=form, error_message=message)
 
         new_review = MovieReviews(movie_id=selected_movie.id, review_contents=review_content, review_author=review_author)
 
