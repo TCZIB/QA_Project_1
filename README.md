@@ -1,6 +1,9 @@
 
 # QA_Project_1 ZMR
 
+Please ignore spelling, spelling error correction isnt working on VSCODE :)
+If anything doesnt make sense please leave a comment and ill get to fixing it!
+
 ## Table of contents:
 - What this projectis
 - Scope of the project
@@ -128,11 +131,11 @@ I have managed to achieve all CRUD functionality, create a trello board and comp
 
 ![ERD_Diagram](https://i.imgur.com/Z7ilG35.jpg "ERD")
 
-This simplified my job while keeping to the MVP, I found it easier to meet the targets modifying the tables as Ihad more of an idea of what Icould modify
+This simplified my job while keeping to the MVP, I found it easier to meet the targets modifying the tables as I had more of an idea of what Icould modify
 
 ## What I would do better
 
-- If Iwas to complete this task next time I would put more effort into using a trello board. This project was rather small so I found it quite easy to remember what I had done and keep track mentally, as stated however, next time I would like to utilise the trello board more.
+- If I was to complete this task next time I would put more effort into using a trello board. This project was rather small so I found it quite easy to remember what I had done and keep track mentally, as stated however, next time I would like to utilise the trello board more.
 - I would like to use more layouts for the HTML, Ihave a few repeating sections of code and next time I would like to make more pre-built sections to throw in
 - I would like to make the website more accessible for mobile devices, it doesnt really scale well. However this isnt really needed as it wasnt in the breif or MVP. It works best on a 1920 * 1080 display
 
