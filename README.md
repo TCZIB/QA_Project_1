@@ -15,6 +15,8 @@
 - Testing
 - Pipeline overview
 - Changes as the project has progressed
+- What I would do better
+- Goals met
 
 
 ## What this project is
@@ -125,3 +127,38 @@ I have restructured the project slightly, due to the need for me to add a users 
 I have managed to achieve all CRUD functionality, create a trello board and complete a risk assesment. The new ERD diagram is as follows:
 
 ![ERD_Diagram](https://i.imgur.com/Z7ilG35.jpg "ERD")
+
+This simplified my job while keeping to the MVP, I found it easier to meet the targets modifying the tables as i had more of an idea of what i could modify
+
+## What I would do better
+
+- If i was to complete this task next time I would put more effort into using a trello board. This project was rather small so I found it quite easy to remember what I had done and keep track mentally, as stated however, next time I would like to utilise the trello board more.
+- I would like to use more layouts for the HTML, i have a few repeating sections of code and next time I would like to make more pre-built sections to throw in
+- I would like to make the website more accessible for mobile devices, it doesnt really scale well. However this isnt really needed as it wasnt in the breif or MVP. It works best on a 1920 * 1080 display
+
+## Goals met
+
+I have met the following goals:
+
+- A Trello board
+    - Trello board used to track the project
+
+- At least two databases, in this case with a relationship
+    - I have three tables, the ability to add reviews, the ability to add movies, the ability to update movie information and the ability to delete entries
+
+- A HTML front end, a base layout will be used and a navigation bar will be used
+    - I have made a decent looking front end, i have used layouts to make sure im not repeating HTML, I have also used a CSS styles sheet to make the website fluent in design 
+
+- WTForms to allow user input
+    - I have several forms including Movie_Review_Form, Login_Form and Modify_Confirm. The forms are used in multiple places to reduce repetative code and they work quite well
+
+- Self testing python to be run during each build
+    - Using Flask_Testing i have been able to acheieve a high level of coverage within my program
+
+- Archiving of tests to allow backtracing
+    - I am using jenkins and artefacting to keep track of previous builds
+
+- CRUD Functionality
+    - I have three tables, the ability to add reviews, the ability to add movies, the ability to update movie information and the ability to delete entries
+
+- Usage of VCS (GIT)
