@@ -20,6 +20,7 @@ If anything doesnt make sense please leave a comment and ill get to fixing it!
 - Changes as the project has progressed
 - What I would do better
 - Goals met
+- Notes to build
 
 
 ## What this project is
@@ -166,3 +167,10 @@ I have met the following goals:
     - I have three tables, the ability to add reviews, the ability to add movies, the ability to update movie information and the ability to delete entries
 
 - Usage of VCS (GIT)
+
+## Notes to build
+
+Certain environment variables must be set before running yourself, these are:
+
+- databaseLogin (URL to database or local sqlite database)
+- bad_words (Path to the /main_app/sub_programs/static/blacklisted_words.txt)
