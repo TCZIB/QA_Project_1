@@ -135,7 +135,7 @@ class TestBase(TestCase):
             follow_redirects=True
         )
 
-        self.assertIn(b'Empty movie cover art', response.data)
+        self.assertIn(b'Empty movie cover photo', response.data)
 
     def test_add_movie_no_title(self):
 

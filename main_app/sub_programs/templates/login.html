@@ -7,22 +7,22 @@
 
 {% block page_contents %}
 
-<table style="width: 50%;">
+<table style="width: 40%;">
     <tr>
-        <th> {{ form.form_username.label }} </th>
-        <th> {{ form.form_password.label }} </th>
+        <th style="padding: 10px;"> {{ form.form_username.label }} </th>
+        <th style="padding: 10px;"> {{ form.form_password.label }} </th>
     </tr>
     <form method = 'post' action = ''>
         {{ form.hidden_tag() }}
 
     <tr>
-        <td> {{ form.form_username }} </td>
-        <td> {{ form.form_password }} </td> 
+        <td style="padding: 10px;" width="80%"> {{ form.form_username }} </td>
+        <td style="padding: 10px;" width="80%"> {{ form.form_password }} </td> 
     </tr>
     <tr>
 
-        <td> {{ message }}</td>
-        <td> {{ form.submit }} </td> 
+        <td style="padding: 10px;"> {{ message }}</td>
+        <td style="padding: 10px;"> {{ form.submit }} </td> 
 
     </tr>
     </form>

@@ -1,6 +1,7 @@
 <html>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
     <body>
         <div>
@@ -10,9 +11,9 @@
                 <br>
             <table>
                 <tr>
-                    <td class="NavBar"> <a href="{{ url_for('home_page') }}"><button> Home </button> </a> </td>
-                    <td class="NavBar">  <a href="{{ url_for('view_movies') }}"><button> View Movies </button> </a> </td>
-                    <td class="NavBar"> <a href="{{ url_for('login_page') }}"> <button> Login </button> </a> </td>
+                    <td class="NavBar" style="padding: 10px;"> <a href="{{ url_for('home_page') }}"><button> Home </button> </a> </td>
+                    <td class="NavBar" style="padding: 10px;">  <a href="{{ url_for('view_movies') }}"><button> View Movies </button> </a> </td>
+                    <td class="NavBar" style="padding: 10px;"> <a href="{{ url_for('login_page') }}"> <button> Login </button> </a> </td>
                 </tr>
             </table>
         </div>

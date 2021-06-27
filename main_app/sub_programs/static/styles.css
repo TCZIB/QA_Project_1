@@ -3,11 +3,12 @@ table, th, td, tr {
     border:solid black 1px;
     border-radius:3px;
     -moz-border-radius:3px;
-    width: 95%;
+    width: 80%;
     text-align: center;
     margin: auto;
     table-layout: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size-adjust: 0.9;
 }
 th.small {
     width: 10%;
@@ -48,10 +49,15 @@ button{
     border-radius:3px;
     -moz-border-radius:3px;
 }
-.general_text {
+text {
     text-align: center;
     margin: auto;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin: auto; 
+}
+
+body {
+    background-color: antiquewhite;
+    background: url("./static/bg.jpg");
 }

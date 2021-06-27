@@ -1,6 +1,9 @@
 
 # QA_Project_1 ZMR
 
+Please ignore spelling, spelling error correction isnt working on VSCODE :)
+If anything doesnt make sense please leave a comment and ill get to fixing it!
+
 ## Table of contents:
 - What this projectis
 - Scope of the project
@@ -14,7 +17,9 @@
 - Trello Board
 - Testing
 - Pipeline overview
-- Changes as project has progressed
+- Changes as the project has progressed
+- What I would do better
+- Goals met
 
 
 ## What this project is
@@ -28,7 +33,7 @@ to the site owner to update the movie titles but , again, anyone can submit a re
 ### MVP
 There are a few basic requirements this project must hit, they are as followed:
 - A Trello board
-- At least two databases, in this case two with a relationship
+- At least two databases, in this case with a relationship
 - A HTML front end, a base layout will be used and a navigation bar will be used
 - WTForms to allow user input
 - Self testing python to be run during each build
@@ -73,7 +78,7 @@ The basic tree structure is as follows:
 
 ### Database ERD
 
-There will also need to be a design for the database, using draw.io i have generated an ERD for this. Please see below:
+There will also need to be a design for the database, using draw.io Ihave generated an ERD for this. Please see below:
 
 ![ERD_Diagram](https://i.imgur.com/Ek9tza7.jpg "ERD")
 
@@ -98,12 +103,12 @@ I will be using Trello to track my project, I will not be posting screenshots bu
 
 https://trello.com/b/FogfXGWJ/zmr
 
-I will be using trello to ensure there are a clear list of goals, I can track when I have met these goals and how confident i will be in meeting them for the set deadline.
+I will be using trello to ensure there are a clear list of goals, I can track when I have met these goals and how confident Iwill be in meeting them for the set deadline.
 I will also be tracking user stories throught the project to make sure what I am delviering is suitable for myself and the end user.
 
 ## Testing
 
-I have used Flask' built in testing module, this allows simple POST requests to the website and forms, it then reads text from the GET that it receives back, i have acheived a 75% test
+I have used Flask' built in testing module, this allows simple POST requests to the website and forms, it then reads text from the GET that it receives back, Ihave acheived a 75% test
 coverage in my program which is good so far. I could increase this however to save time I have not. The reason for this is because in the routes.py there are two very similar chunks of check code, by design they have had to be duplicated and changed instead of made into a function however they both perfom the same checks. I have checked on iteration and it is 100% covered, this gives me a good indication that the second duplicate block is perfoming its role great aswell.
 
 The testing generates a coverage report automatically when a new commit is added to the main branch. This is done through a jenkins item and an automatic webhook. This means everytime something is committed to main it is automatically tests, built then deployed. The test results are artifacted allowing me to track changes, below is a screenshot of my jenkins interface. The reason builder has failed is because it is using gunicorn and running the task endlessly, this can be improved but works for now.
@@ -112,6 +117,7 @@ The testing generates a coverage report automatically when a new commit is added
 
 ![Coverage](https://i.imgur.com/ULW7J4p.png "Coverage")
 
+Click this link [here](https://drive.google.com/file/d/1kJUMs_gd_D6LDApC6LgDDyGHJk1-L3e6/view?usp=sharing) to view an example test
 
 ## Pipeline Overview
 
@@ -119,9 +125,44 @@ Please see below a diagram as to my pipeline:
 
 ![Pipeline](https://i.imgur.com/b9kpqjL.png "Pipeline")
 
-## Changes as project has progressed
+## Changes as the project has progressed
 
 I have restructured the project slightly, due to the need for me to add a users I have missed off the Review_Likes table, this is a small part but the main core of the site remains,
 I have managed to achieve all CRUD functionality, create a trello board and complete a risk assesment. The new ERD diagram is as follows:
 
 ![ERD_Diagram](https://i.imgur.com/Z7ilG35.jpg "ERD")
+
+This simplified my job while keeping to the MVP, I found it easier to meet the targets modifying the tables as I had more of an idea of what Icould modify
+
+## What I would do better
+
+- If I was to complete this task next time I would put more effort into using a trello board. This project was rather small so I found it quite easy to remember what I had done and keep track mentally, as stated however, next time I would like to utilise the trello board more.
+- I would like to use more layouts for the HTML, Ihave a few repeating sections of code and next time I would like to make more pre-built sections to throw in
+- I would like to make the website more accessible for mobile devices, it doesnt really scale well. However this isnt really needed as it wasnt in the breif or MVP. It works best on a 1920 * 1080 display
+
+## Goals met
+
+I have met the following goals:
+
+- A Trello board
+    - Trello board used to track the project
+
+- At least two databases, in this case with a relationship
+    - I have three tables, the ability to add reviews, the ability to add movies, the ability to update movie information and the ability to delete entries
+
+- A HTML front end, a base layout will be used and a navigation bar will be used
+    - I have made a decent looking front end, Ihave used layouts to make sure im not repeating HTML, I have also used a CSS styles sheet to make the website fluent in design 
+
+- WTForms to allow user input
+    - I have several forms including Movie_Review_Form, Login_Form and Modify_Confirm. The forms are used in multiple places to reduce repetative code and they work quite well
+
+- Self testing python to be run during each build
+    - Using Flask_Testing Ihave been able to acheieve a high level of coverage within my program
+
+- Archiving of tests to allow backtracing
+    - I am using jenkins and artefacting to keep track of previous builds
+
+- CRUD Functionality
+    - I have three tables, the ability to add reviews, the ability to add movies, the ability to update movie information and the ability to delete entries
+
+- Usage of VCS (GIT)
