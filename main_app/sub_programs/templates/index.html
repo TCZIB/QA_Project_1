@@ -1,6 +1,7 @@
 <html>
 
     <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
         <title> Home </title> 
     </head>
 
@@ -10,7 +11,7 @@
 
 <table>
     <tr>
-        <td> Welcome to ZMR, your place to view movies, their info and leave a review! <br><br> See below 5 random movies! <br> </td>
+        <td style="font-size:1vw;"> Welcome to ZMR, your place to view movies, their info and leave a review! <br><br> See below 5 random movies! <br> </td>
     </tr>
 </table>
 <br>
@@ -18,23 +19,23 @@
     <table>
      
         <tr>
-            <th class="small"> Cover Photo</th>
-            <th class="small"> Title </th>
-            <th class="small"> Age Rating </th>
-            <th class="large"> Movie Description </th>
-            <th class="small"> Movie Runtime </th>
-            <th class="small"> Reviews </th>
+            <th class="small" style="font-size:1vw;"> Cover Photo</th>
+            <th class="small" style="font-size:1vw;"> Title </th>
+            <th class="small" style="font-size:1vw;"> Age Rating </th>
+            <th class="large" style="font-size:1vw;"> Movie Description </th>
+            <th class="small" style="font-size:1vw;"> Movie Runtime </th>
+            <th class="small" style="font-size:1vw;"> Reviews </th>
         </tr>
     
         {% for item in items %}
     
         <tr>
             <td> <img src="{{ item.movie_cover_art }}" alt="{{ item.movie_title }}" width="100%"> </td>
-            <td> {{ item.movie_title }} </td>
-            <td> {{ item.movie_age }} </td>
-            <td> {{ item.movie_description }} </td>
-            <td> {{ item.movie_runtime }} Mins </td>
-            <td> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> <button style="width: 80%;"> Reviews for {{ item.movie_title }} </button> </a> </td>
+            <td style="font-size:1vw;"> {{ item.movie_title }} </td>
+            <td style="font-size:1vw;"> {{ item.movie_age }} </td>
+            <td style="font-size:1vw;"> {{ item.movie_description }} </td>
+            <td style="font-size:1vw;"> {{ item.movie_runtime }} Mins </td>
+            <td style="font-size:1vw;"> <a href={{ url_for("movie_reviews_page" ,movie_title = item.movie_title ,movie_id = item.id) }}> <button style="overflow-wrap: break-word; width: 80%; font-size:1vw;"> Reviews for {{ item.movie_title }} </button> </a> </td>
         </tr>
     
         {% endfor %}
