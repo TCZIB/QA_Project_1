@@ -174,3 +174,4 @@ Certain environment variables must be set before running yourself, these are:
 
 - databaseLogin (URL to database or local sqlite database)
 - bad_words (Path to the /main_app/sub_programs/static/blacklisted_words.txt)
+- secretKet (Some random string)
