@@ -117,7 +117,7 @@ The testing generates a coverage report automatically when a new commit is added
 
 ![Coverage](https://i.imgur.com/ULW7J4p.png "Coverage")
 
-Click this link ![here](https://drive.google.com/file/d/1kJUMs_gd_D6LDApC6LgDDyGHJk1-L3e6/view?usp=sharing "here") to view an example test
+Click this link [here](https://drive.google.com/file/d/1kJUMs_gd_D6LDApC6LgDDyGHJk1-L3e6/view?usp=sharing) to view an example test
 
 ## Pipeline Overview
 
