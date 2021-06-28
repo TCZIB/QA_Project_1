@@ -46,7 +46,7 @@ def home_page():
 def view_movies():
     return render_template('movies.html', items = Movies.query.order_by(Movies.movie_title))
 
-@app.route("/movies/reviews/<movie_title>/<movie_id>", methods=['GET', 'POST'])
+@app.route("/movies/reviews", methods=['GET', 'POST'])
 def movie_reviews_page(movie_title, movie_id):
 
     form = Movie_Review_Form()
