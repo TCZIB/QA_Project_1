@@ -245,7 +245,7 @@ def modify_movie(movie_id, user):
             item_to_modify.movie_title = form.movie_title.data
             item_to_modify.movie_age = form.movie_age.data
             item_to_modify.movie_description = form.movie_description.data
-            item_to_modify.runtime = form.movie_runtime.data
+            item_to_modify.movie_runtime = form.movie_runtime.data
 
             db.session.commit()
 
